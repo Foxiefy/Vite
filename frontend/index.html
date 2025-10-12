@@ -1,13 +1,70 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>frontend</title>
-  </head>
-  <body>
-    <div id="root"></div>
+    <title>Controle de Horários - Escola Modelo</title>
+
+    <!-- CSS da escola -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <!-- Fontes e ícones -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- É oq faz o dinâmico aparecer -->
     <script type="module" src="/src/main.jsx"></script>
+  </head>
+
+  <body>
+    <!-- Menu lateral escondido -->
+    <aside class="sidebar" id="sidebar">
+      <a href="#"><i class="fas fa-home"></i> Início</a>
+      <a href="#"><i class="fas fa-calendar-alt"></i> Horários</a>
+      <a href="#"><i class="fas fa-user-graduate"></i> Alunos</a>
+      <a href="#"><i class="fas fa-chalkboard-teacher"></i> Professores</a>
+    </aside>
+
+    <!-- Cabeçalho -->
+    <header class="header">
+      <span class="menu-toggle" id="menu-toggle"
+        ><i class="fas fa-bars"></i
+      ></span>
+      <h1>Escola Modelo</h1>
+      <nav>
+        <a href="#">Início</a>
+        <a href="#">Horários</a>
+        <a href="#">Alunos</a>
+        <a href="#">Professores</a>
+      </nav>
+    </header>
+
+    <!-- Main: React vai renderizar aqui -->
+    <main class="main container">
+      <div id="root"></div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+      <p>&copy; 2025 Escola Modelo. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- JS do menu -->
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const sidebar = document.getElementById("sidebar");
+      const main = document.querySelector(".main");
+
+      menuToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+          main.style.marginLeft = "220px"; // desloca o main
+        } else {
+          main.style.marginLeft = "0";
+        }
+      });
+    </script>
   </body>
 </html>

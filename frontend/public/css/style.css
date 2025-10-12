@@ -1,0 +1,141 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background-color: #fff;
+  color: #111;
+  transition: all 0.3s ease;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 220px;
+  height: 100%;
+  background-color: #111;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: background 0.3s, padding-left 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #222;
+  padding-left: 2.5rem;
+}
+
+.sidebar.active {
+  transform: translateX(-100%);
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 220px;
+  right: 0;
+  height: 70px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  justify-content: space-between;
+  z-index: 1000;
+  transition: left 0.3s ease;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  color: #111;
+}
+
+.header nav a {
+  margin-left: 2rem;
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.header nav a:hover {
+  color: #555;
+}
+
+.menu-toggle {
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* Main */
+.main {
+  margin-left: 220px;
+  padding: 100px 2rem 2rem 2rem;
+
+  min-height: calc(100vh - 70px);
+  background-color: #f9f9f9;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1rem 2rem;
+  background-color: #111;
+  color: #fff;
+  position: relative;
+  bottom: 0;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .header {
+    left: 0;
+  }
+
+  .menu-toggle {
+    display: block;
+    color: #111;
+  }
+
+  .main {
+    margin-left: 0;
+    padding-top: 90px;
+    max-height: fit-content;
+  }
+
+  .footer {
+    display: block;
+    text-align: center;
+    
+  }
+}

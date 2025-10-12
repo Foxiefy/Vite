@@ -1,42 +1,121 @@
+/* Container principal */
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+ 
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Componente principal */
+.principal {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 3rem;
+  background: linear-gradient(135deg, rgba(69,68,68,0.45) 0%, rgba(30,58,138,0.15) 100%);
+  backdrop-filter: blur(6px);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+h1 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #13161d; /* Azul moderno */
 }
 
-.card {
-  padding: 2em;
+/* Seção de seleção */
+.selecao {
+  margin-bottom: 2rem;
 }
 
-.read-the-docs {
-  color: #888;
+.selecao select {
+  display: inline-block;
+  width: 250px;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
 }
+
+.selecao select:focus {
+  outline: none;
+  border-color: #545454;
+  box-shadow: 0 0 5px rgba(57, 62, 73, 0.5);
+}
+
+/* Formulário de horários */
+.formularioHorarios {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.formularioHorarios label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: #0b0b0d;
+}
+
+.formularioHorarios input[type="time"] {
+  width: 200px;
+  padding: 0.4rem 0.6rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.formularioHorarios input[type="time"]:focus {
+  outline: none;
+  border-color: #1f222a;
+  box-shadow: 0 0 5px rgba(23, 25, 28, 0.5);
+}
+
+/* Botões */
+.botoes {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.botoes button {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  border-radius: 12px;
+  border: none;
+  background-color: #0e1014;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.botoes button:hover {
+  background-color: #4c4d4f; /* azul mais claro ao passar o mouse */
+}
+
+/* Lista de horários */
+.lista {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lista p {
+  padding: 0.5rem 1rem;
+  width: 220px;
+  background-color: #eef2ff;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 0;
+}
+
